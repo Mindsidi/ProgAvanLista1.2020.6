@@ -1,63 +1,6 @@
 #include <stdio.h>
-
-int main(int argc, char *argv[])
-{
-    float tempo;
-    time_t t_ini, t_fim;
-
-    int i,n,j, h;
-    float temp=0.0f;
-    printf("Valor de n= \n");
-    scanf("%d", &n);
-
-    float *a;
-
-    a=malloc(n*sizeof(float));
-    for(i=0;i<=n; i++){
-        a[i]=rand() % 100+0.3;
-    }
-
-    printf("\n\n Antes \n\n");
-
-    for(i= 0; i<=n; i++)
-    {
-        printf("%.2f  ", a[i]);
-    }
-
-    printf("\n");
-    t_ini=time(NULL);
-    for(h=0; h<4694900; h++){
-    for(i=0;i<=n;i++)
-    {
-        for(j=0;j<n-i-1;j++)
-        {
-            if(a[j]>a[j+1])
-            {
-                temp=a[j+1];//swaping element
-                a[j+1]=a[j];
-                a[j]=temp;
-            }
-        }
-    }
-    }
-    t_fim=time(NULL);
-    tempo = difftime(t_fim, t_ini);
-
-    printf("\n\nDepois \n\n");
-
-    for(i= 0; i<=n; i++)
-    {
-        printf("%.2f  ", a[i]);
-    }
-    printf("\n\n");
-    printf("Tempo:%f\n", tempo);
-}
-
-/////////////////////////////////////////////////////
-resposta:1 seg
-////////////////////////////////////////////////////
-#include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int comparador(const void *a, const void *b) {
    return ( *(int*)a - *(int*)b );
@@ -72,17 +15,16 @@ int comparador2(const void *a, const void *b) {
       return 0;
    }
 }
-int main(int argc, char *argv[])
+int main()
 {
-    float tempo;
-    time_t t_ini, t_fim;
-
     int i,n,j, h;
-    float temp=0.0f;
+    clock_t t;
+
     printf("Valor de n= \n");
     scanf("%d", &n);
 
     float *a;
+    t = clock();
 
     a=malloc(n*sizeof(float));
     for(i=0;i<=n; i++){
@@ -104,8 +46,13 @@ for(h=0; h<4694900; h++){
     {
         printf("%.2f  ", a[i]);
     }
+    t = clock() - t;
+        printf("\n\n");
+    printf("Tempo de execucao: %lf", ((double)t)/((CLOCKS_PER_SEC/1000)));
     printf("\n\n");
-    printf("Tempo:%f\n", tempo);
+
 }
-////////////////////////////////////////////////////
-resposta:0
+/////////////////////////////////////////////
+TEMPO=890,00 milisegundos
+/////////////////////////////////////////////
+
