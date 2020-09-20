@@ -1,0 +1,82 @@
+#include <stdio.h>
+#include <conio.h>
+#include <stdlib.h>
+
+int main() {
+
+    //Definição de variaveis
+    int i, j, nla, nca, ncb,x=0, aux, p;
+    int **a,**b, **c;
+
+    //Entrada de dados
+    printf("\n Informe a quntidade de linhas da matriz A : ");
+    scanf("%d",&nla);
+    printf("\n Informe a quantidade de colunas da matriz A : ");
+    scanf("%d",&nca);
+    printf("\n Informe a quantidade de colunas da matriz B : ");
+    scanf("%d",&ncb);
+    char matrizA [nla] [nca], matrizB [nla] [ncb], matrizC [nla][ncb];
+    a=malloc(nla*sizeof (int*));
+    for(i=0; i<nla; i++){
+        a[i]=malloc(nca*sizeof (int));
+    }
+    b=malloc(nca*sizeof (int*));
+    for(i=0; i<nla; i++){
+        a[i]=malloc(ncb*sizeof (int));
+    }
+    c=malloc(nla*sizeof (int*));
+    for(i=0; i<nla; i++){
+        a[i]=malloc(ncb*sizeof (int));
+    }
+    for(i=0; i<nla; i++){
+        for(i=0; i<nca; i++){
+        }
+    }
+    // Imprime as matrizes definidas
+    printf("---------------------------- 1 - Matriz Gerada ---------------------------------\n\n");
+
+    for(i = 0; i < nla; i++) {
+        for(j = 0; j < nca; j++) {
+            matrizA[i][j]= rand()%10;
+        }
+    }
+    for(i = 0; i < nla; i++) {
+        for(j = 0; j < nca; j++) {
+            printf("matriz A =[%d] [%d] = %d ",i,j, matrizA[i][j]);
+        }
+        printf("\n\n");
+    }
+
+    printf("---------------------------- 2 - Matriz Gerada ---------------------------------\n\n");
+    for(i = 0; i < nca; i++) {
+        for(j = 0; j < ncb; j++) {
+            matrizB[i][j]=rand()%10;
+        }
+    }
+    for(i = 0; i < nla; i++) {
+        for(j = 0; j < nca; j++) {
+            printf("matrizB =[%d] [%d] = %d ",i,j, matrizB[i][j]);
+        }
+        printf("\n\n");
+    }
+    printf("---------------------------- 3 - Matriz Gerada ---------------------------------\n\n");
+
+    //Processamento e saida em tela  =  PRODUTO DAS MATRIZES
+    for(i = 0; i < nla; i++) {
+        for(j = 0; j < ncb; j++) {
+            x=0;
+            for(p=0; p<nca; p++){
+                x=x+matrizA[i][p]*matrizB[p][j];
+            }
+                    matrizC[i][j]=x;
+        }
+    }
+
+    for(i = 0; i < nla; i++) {
+        for(j = 0; j < ncb; j++) {
+           printf("matrizC =[%d] [%d] = %d ",i,j, matrizC[i][j]);
+        }
+        printf("\n\n");
+    }
+    printf("\n\n");
+}
