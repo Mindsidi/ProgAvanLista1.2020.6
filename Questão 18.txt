@@ -1,5 +1,4 @@
-#include <stdio.h>
-#include <conio.h>
+##include <stdio.h>
 #include <stdlib.h>
 
 int main() {
@@ -53,8 +52,8 @@ int main() {
             matrizB[i][j]=rand()%10;
         }
     }
-    for(i = 0; i < nla; i++) {
-        for(j = 0; j < nca; j++) {
+    for(i = 0; i < nca; i++) {
+        for(j = 0; j < ncb; j++) {
             printf("matrizB =[%d] [%d] = %d ",i,j, matrizB[i][j]);
         }
         printf("\n\n");
