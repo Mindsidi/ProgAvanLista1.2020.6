@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h> //biblioteca lib
 
 int comparador(const void *a, const void *b) {
    return ( *(int*)a - *(int*)b );
@@ -14,7 +14,7 @@ int comparador2(const void *a, const void *b) {
       return 0;
    }
 }
-int main(int argc, char *argv[])
+int main(int argc, char *argv[]) 
 {
     float tempo;
     time_t t_ini, t_fim;
@@ -47,5 +47,5 @@ for(h=0; h<4694900; h++){
         printf("%.2f  ", a[i]);
     }
     printf("\n\n");
-    printf("Tempo:%f\n", tempo);
+    printf("Tempo:%f\n", tempo); //Imprime o resultado
 }
