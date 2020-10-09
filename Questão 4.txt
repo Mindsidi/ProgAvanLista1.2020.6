@@ -1,7 +1,3 @@
-Questão 4. Determine o que será mostrado pelo seguinte programa (compile-o, execute-o e verifique se 
-foram obtidas as respostas esperadas). 
-
-
 
   	/* (a) */
   	valor = 10; 	                // Armazena o valor 10 na variável 'valor'.
