@@ -53,7 +53,7 @@ for(h=0; h<4694900; h++){
 
 }
 /////////////////////////////////////////////
-TEMPO=890,00 milisegundos
+//TEMPO=890,00 milisegundos
 
 
 
@@ -122,6 +122,6 @@ int main()
 }
 
 /////////////////////////////////////////////
-Tempo de execucao: 305,00 milisegundos(bem mais rapido)
+//Tempo de execucao: 305,00 milisegundos(bem mais rapido)
 //////////////////////////////////
 
