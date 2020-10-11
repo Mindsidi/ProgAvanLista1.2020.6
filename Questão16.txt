@@ -2,6 +2,54 @@
 #include <stdlib.h>
 #include <time.h>
 
+void ordena(int m){
+    int i,j, h=0;
+    float temp=0.0f;
+    clock_t t;
+
+    float *a;
+    a=malloc(m*sizeof(float));
+    for(i=0;i<=m; i++){
+        a[i]=rand() % 100+0.3;
+    }
+
+    printf("\n\n Antes \n\n");
+
+    for(i= 0; i<=m; i++)
+    {
+        printf("%.2f  ", a[i]);
+    }
+t = clock();
+
+    printf("\n");
+    for(h=0; h<4694900; h++){
+    for(i=0;i<=m;i++)
+    {
+        for(j=0;j<m-i-1;j++)
+        {
+            if(a[j]>a[j+1])
+            {
+                temp=a[j+1];//swaping element
+                a[j+1]=a[j];
+                a[j]=temp;
+            }
+        }
+    }
+    }
+
+    printf("\n\nDepois \n\n");
+
+    for(i= 0; i<=m; i++)
+    {
+        printf("%.2f  ", a[i]);
+    }
+    t = clock() - t;
+    printf("\n Tempo de execucao da minha: %lf", ((double)t)/((CLOCKS_PER_SEC/1000)));
+
+    printf("\n\n");
+}
+
+
 int comparador(const void *a, const void *b) {
    return ( *(int*)a - *(int*)b );
 }
@@ -48,80 +96,11 @@ for(h=0; h<4694900; h++){
     }
     t = clock() - t;
         printf("\n\n");
-    printf("Tempo de execucao: %lf", ((double)t)/((CLOCKS_PER_SEC/1000)));
+    printf("Tempo de execucao da qsort: %lf", ((double)t)/((CLOCKS_PER_SEC/1000)));
     printf("\n\n");
 
-}
-/////////////////////////////////////////////
-//TEMPO=890,00 milisegundos
-
-
-
-/////////////////////////////////////////////
-#include <stdio.h>
-#include <time.h>
-void ordena(int m){
-    int i,n,j, h=0;
-    float temp=0.0f;
-    clock_t t;
-
-    float *a;
-    a=malloc(m*sizeof(float));
-    for(i=0;i<=m; i++){
-        a[i]=rand() % 100+0.3;
-    }
-
-    printf("\n\n Antes \n\n");
-
-    for(i= 0; i<=m; i++)
-    {
-        printf("%.2f  ", a[i]);
-    }
-t = clock();
-
-    printf("\n");
-    for(h=0; h<4694900; h++){
-    for(i=0;i<=m;i++)
-    {
-        for(j=0;j<m-i-1;j++)
-        {
-            if(a[j]>a[j+1])
-            {
-                temp=a[j+1];//swaping element
-                a[j+1]=a[j];
-                a[j]=temp;
-            }
-        }
-    }
-    }
-t = clock() - t;
-printf("Tempo de execucao: %lf", ((double)t)/((CLOCKS_PER_SEC/1000)));
-
-    printf("\n\nDepois \n\n");
-
-    for(i= 0; i<=m; i++)
-    {
-        printf("%.2f  ", a[i]);
-    }
-    printf("\n\n");
-}
-int main()
-{
-
-    int n;
-    printf("Valor de n= \n");
-    scanf("%d", &n);
-    int m=n;
-
-
-    (*ordena)(m);
+    (*ordena)(n);
 
 
     return 0;
-
 }
-
-/////////////////////////////////////////////
-//Tempo de execucao: 305,00 milisegundos(bem mais rapido)
-//////////////////////////////////
-
