@@ -14,7 +14,7 @@ int comparador2(const void *a, const void *b) { // funçao que troca as variavei
       return 0;                                  // retorna 0
    }
 }
-int main(int argc, char *argv[]) //inicializando a funcao
+int main(int argc, char *argv[]) //inicializando a funcao (funçao principal)
 {
     float tempo;                 // criando a variavel tempo
     time_t t_ini, t_fim;         // variaveis de tempo
@@ -27,22 +27,22 @@ int main(int argc, char *argv[]) //inicializando a funcao
     float *a;                    // criando variavel
 
     a=malloc(n*sizeof(float));    //alocando variavel dinamicamente
-    for(i=0;i<=n; i++){            // for que vai de i a n
+    for(i=0;i<=n; i++){            // laço for que vai de i a n
         a[i]=rand() % 100+0.3;     // dizendo quais sao os valores de a[i]
     }
 
     printf("\n\n Antes \n\n");   //amostrando antes no terminal
 
-    for(i= 0; i<=n; i++)         // for de i a n
+    for(i= 0; i<=n; i++)         // laço for de i a n
     {
         printf("%.2f  ", a[i]);   //amostrando o que tem no vetor
     }
-for(h=0; h<4694900; h++){          // for de i a 4694900
+for(h=0; h<4694900; h++){          // laço for de i a 4694900
      qsort(a, n, sizeof(float), comparador);   // chamando a funcao qsort
 }
     printf("\n\nDepois \n\n");  // amostrando depois
 
-    for(i= 0; i<=n; i++) // for de i a n
+    for(i= 0; i<=n; i++) // laço for de i a n
     {
         printf("%.2f  ", a[i]); //amostrando o que tem no vetor
     }
