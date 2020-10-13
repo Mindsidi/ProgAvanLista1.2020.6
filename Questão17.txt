@@ -2,7 +2,7 @@
 #include <stdlib.h>
 void tururu(char **a, char **b, char **c, int atv){
     int *x, *y, *z, i;
-    
+
     x=malloc(atv *sizeof (int));
     y=malloc(atv *sizeof (int));
     z=malloc(atv *sizeof (int));
@@ -16,7 +16,7 @@ void tururu(char **a, char **b, char **c, int atv){
     for(i=0; i<atv; i++){
         x[i]=rand()%20 -10;
     }
-    printf("O valor do ");
+    printf("O valor do vetor ");
     printf("%s\n", a);
     for(i=0; i<atv; i++){
         printf("%d,", x[i]);
@@ -25,7 +25,7 @@ void tururu(char **a, char **b, char **c, int atv){
     for(i=0; i<atv; i++){
         y[i]=rand()%20 -10;
     }
-    printf("O valor do ");
+    printf("O valor do vetor ");
     printf("%s\n", b);
     for(i=0; i<atv; i++){
         printf("%d,", y[i]);
@@ -37,7 +37,7 @@ void tururu(char **a, char **b, char **c, int atv){
     for(i=0; i<atv; i++){
         z[i]=x[i]+y[i];
     }
-    printf("O valor do ");
+    printf("O valor do vetor ");
     printf("%s\n", c);
     for(i=0; i<atv; i++){
         printf("%d,", z[i]);
@@ -67,9 +67,6 @@ int main()
     printf("tamanho do vetores \n");
     scanf("%d", &tv);
 
-    printf("%s\n",vetorum);
-    printf("%s\n", vetordois);
-    printf("%s\n",vetorsoma);
     (*tururu)(vetorum, vetordois, vetorsoma, tv);
 
 }
