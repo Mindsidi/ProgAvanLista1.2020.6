@@ -43,7 +43,9 @@ void tururu(char **a, char **b, char **c, int atv){
         printf("%d,", z[i]);
     }
     printf("\n");
-
+    free(x);
+    free(y);
+    free(z);
 
 }
 int main()
@@ -68,5 +70,8 @@ int main()
     scanf("%d", &tv);
 
     (*tururu)(vetorum, vetordois, vetorsoma, tv);
+    free(vetorum);
+    free(vetordois);
+    free(vetorsoma);
 
 }
