@@ -2,11 +2,7 @@
 #include <stdlib.h>
 void tururu(char **a, char **b, char **c, int atv){
     int *x, *y, *z, i;
-    printf("%s\n", a);
-    printf("%s\n", b);
-    printf("%s\n",c);
-    printf("%d", atv);
-
+    
     x=malloc(atv *sizeof (int));
     y=malloc(atv *sizeof (int));
     z=malloc(atv *sizeof (int));
