@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 void ordena(int m){
     int i,n,j;
     float temp=0.0f;
@@ -19,7 +20,7 @@ void ordena(int m){
     printf("\n");
     for(i=0;i<=m;i++)
     {
-        for(j=0;j<m-i-1;j++)
+        for(j=0;j<m-i;j++)
         {
             if(a[j]>a[j+1])
             {
@@ -37,6 +38,7 @@ void ordena(int m){
         printf("%.2f  ", a[i]);
     }
     printf("\n\n");
+    free(a);
 }
 int main()
 {
@@ -47,4 +49,6 @@ int main()
     (*ordena)(m);
     return 0;
 
+
 }
+
