@@ -24,7 +24,7 @@ void ordena(int m){
         {
             if(a[j]>a[j+1])
             {
-                temp=a[j+1];//swaping element
+                temp=a[j+1];
                 a[j+1]=a[j];
                 a[j]=temp;
             }
