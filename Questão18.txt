@@ -38,6 +38,12 @@ void multiplica(int **d, int **e, int  **f, int anla, int anca, int ancb){
         }
         printf("\n\n");
     }
+    free(d[0]);
+    free(d);
+    free(e[0]);
+    free(e);
+    free(f[0]);
+    free(f);
 
 }
 
@@ -70,6 +76,12 @@ void multiplica(int **d, int **e, int  **f, int anla, int anca, int ancb){
 
 
         (*multiplica)(a, b, c, nla, nca, ncb);
+        free(a[0]);
+        free(a);
+        free(b[0]);
+        free(b);
+        free(c[0]);
+        free(c);
 
         return 0;
 
