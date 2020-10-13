@@ -30,7 +30,7 @@ void multiplica(int **d, int **e, int  **f, int anla, int anca, int ancb){
         for(j = 0; j < ancc; j++) {
 
             x=0;
-            for(p=0; p<anca; p++){
+            for(p=0; p<ancc; p++){
                 x=x+d[i][p]*e[p][j];
             }
             f[i][j]=x;
