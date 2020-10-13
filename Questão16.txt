@@ -100,7 +100,7 @@ for(h=0; h<4694900; h++){
     printf("\n\n");
 
     (*ordena)(n);
-    free(a)
+    free(a);
 
     return 0;
 }
