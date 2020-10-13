@@ -10,7 +10,6 @@ void tururu(char **a, char **b, char **c, int atv){
     x=malloc(atv *sizeof (int));
     y=malloc(atv *sizeof (int));
     z=malloc(atv *sizeof (int));
-    printf("entrou");
 
     for(i=0; i<atv; i++){
         x[i]=0;
