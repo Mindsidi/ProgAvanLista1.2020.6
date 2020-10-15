@@ -2,21 +2,23 @@
 #include <stdlib.h>
 void multiplica(int **d, int **e, int  **f, int anla, int anca, int ancb){
     int i, j,x, p;
-    int anlb=anla, anlc=anla, ancc=ancb;
-
+    int anlb, anlc, ancc;
+         anlb=anla;
+        anlc=anla;
+        ancc=ancb;
 
     for(i = 0; i < anla; i++) {
         for(j = 0; j < anca; j++) {
-            d[i][j]=i+j;
+            d[i][j]=rand()%5;
 
 
         }
     }
 
 
-    for(i = 0; i < anlb; i++) {
+    for(i = 0; i < anca; i++) {
         for(j = 0; j < ancb; j++) {
-            e[i][j]=i+j;
+            e[i][j]=rand()%5;
 
         }
 
@@ -25,14 +27,16 @@ void multiplica(int **d, int **e, int  **f, int anla, int anca, int ancb){
 
 
 
-    for(i = 0; i < anlc; i++) {
-        for(j = 0; j < ancc; j++) {
+    for(i = 0; i < anla; i++) {
+        for(j = 0; j < ancb; j++) {
 
-            x=0;
-            for(p=0; p<ancc; p++){
+
+            f[i][j]=0;
+            for(p=0; p<anca; p++){
                 x=x+d[i][p]*e[p][j];
             }
             f[i][j]=x;
+            x=0;
 
         }
 
